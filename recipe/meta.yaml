@@ -1,5 +1,5 @@
 {% set name = "dabl" %}
-{% set version = "0.1.9" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 21f3fe8b39b6503441e3a856d7d976c7914def1fc0419a17723cd4af9839b7ee
+  sha256: 88542717beccbc22dba35aff38126db3d5e841dce8ab3d8860663cf5a32e93fa
 
 build:
   number: 0
