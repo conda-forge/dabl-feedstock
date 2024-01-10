@@ -1,5 +1,5 @@
 {% set name = "dabl" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 68e2eeea699fb72a5c2fdd00589eed8cfc2e5f1e826136f38938723aaa80f73f
+  sha256: 104dad3eb4fed61b7be4310670c79537ed3a51289c1abcee298891705029aa83
 
 build:
   number: 0
@@ -16,14 +16,14 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3.9
     - pip
   run:
-    - python >=3.6
-    - matplotlib-base
+    - python >=3.9
+    - matplotlib-base >=3.8
     - numpy
     - pandas
-    - scikit-learn >=0.24.0
+    - scikit-learn >=1.1
     - scipy
     - seaborn
 
