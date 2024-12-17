@@ -1,13 +1,13 @@
 {% set name = "dabl" %}
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0cc465f80b6850a076d0cd857f05010764026ba0394d554b352c96eca446439a
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 0d299a9cd46e0cbf3e4cdd8580d0232bb37aa2a1f59299aec2ab0d7615a59a53
 
 build:
   number: 0
@@ -16,18 +16,22 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - matplotlib-base >=3.8
     - numpy
+    - packaging
     - pandas
-    - scikit-learn >=1.1
+    - scikit-learn >=1.3
     - scipy
     - seaborn
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - dabl
 
