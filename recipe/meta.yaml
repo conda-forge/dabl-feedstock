@@ -16,18 +16,22 @@ build:
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - matplotlib-base >=3.8
     - numpy
+    - packaging
     - pandas
-    - scikit-learn >=1.1
+    - scikit-learn >=1.3
     - scipy
     - seaborn
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - dabl
 
